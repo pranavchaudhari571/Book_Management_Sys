@@ -43,7 +43,7 @@ git clone https://github.com/pranavchaudhari571/Book_Management_Sys
 ```
 2. Install dependencies:
 ```bash
-cd Book_Management_System
+cd Book_Management_Sys
 npm install
 ```
 3. Run this script in MySql Client:
