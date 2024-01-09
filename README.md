@@ -38,7 +38,7 @@ Remove a book from the system.
 # How to use Apllication
 1. Clone the repository:
 ```bash
-git clone https://github.com/pranavchaudhari571/book_management_system.git
+git clone https://github.com/pranavchaudhari571/Book_Management_Sys
 
 ```
 2. Install dependencies:
