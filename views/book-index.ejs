@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Management System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color:rgb(59, 170, 57);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            overflow-x: auto; /* Enable horizontal scroll for small screens */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        @media only screen and (max-width: 600px) {
+            table {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Books Management System</h1>
+    </header>
+
+    <form action="/displayaddform">
+        <button type="submit" name="btn" id="btn" value="add">Add New Book</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>₹ Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%for(var i=0;i<bookdata.length;i++){%>
+                <tr>
+                    <td><%=bookdata[i].isbn%></td>
+                    <td><%=bookdata[i].title%></td>
+                    <td><%=bookdata[i].author%></td>
+                    <td>₹<%=bookdata[i].price%></td>
+                    <td>
+                        <a href="/deletebook/<%=bookdata[i].isbn%>">Delete</a>
+                        <a href="/editbook/<%=bookdata[i].isbn%>">Edit</a>
+                    </td>
+                </tr>
+            <%} %>
+        </tbody>
+    </table>
+</body>
+</html>
